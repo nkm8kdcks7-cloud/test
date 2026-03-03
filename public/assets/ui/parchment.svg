@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" seed="8"/>
+      <feColorMatrix type="matrix" values="
+        0.95 0    0    0    0
+        0    0.88 0    0    0
+        0    0    0.72 0    0
+        0    0    0    1    0"/>
+      <feComponentTransfer>
+        <feFuncR type="gamma" amplitude="1" exponent="1.1" offset="0"/>
+        <feFuncG type="gamma" amplitude="1" exponent="1.05" offset="0"/>
+        <feFuncB type="gamma" amplitude="1" exponent="1.0" offset="0"/>
+      </feComponentTransfer>
+    </filter>
+
+    <radialGradient id="vignette" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="65%" stop-color="rgba(0,0,0,0.12)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.32)"/>
+    </radialGradient>
+
+    <linearGradient id="stain" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f1e0b5"/>
+      <stop offset="50%" stop-color="#ead4a2"/>
+      <stop offset="100%" stop-color="#f0dfb3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#stain)"/>
+  <rect width="1400" height="900" filter="url(#noise)" opacity="0.72"/>
+  <rect width="1400" height="900" fill="url(#vignette)"/>
+
+  <g opacity="0.18">
+    <path d="M30 70 C140 20, 240 40, 360 35 C520 30, 660 10, 840 25 C1040 45, 1160 10, 1370 55"
+          fill="none" stroke="#5b3a1b" stroke-width="16" stroke-linecap="round"/>
+    <path d="M35 845 C190 880, 300 850, 450 862 C620 874, 720 894, 920 875 C1120 855, 1240 890, 1370 835"
+          fill="none" stroke="#5b3a1b" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>
